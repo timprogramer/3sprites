@@ -38,9 +38,14 @@ def right(pos_x,pos_y):
 @wrap.on_mouse_down(wrap.BUTTON_WHEELUP)
 def wheelup(pos_x,pos_y):
     if wrap.sprite.is_collide_point(p3,pos_x,pos_y) == True:
-        sx=wrap.sprite.get_(p3)
-        sy=wrap.sprite.get_size(p3)
-        wrap.sprite.set_size(p3,,1)
+        h=wrap.sprite.get_height(p3)
+        w=wrap.sprite.get_width(p3)
+        wrap.sprite.set_size(p3,h+1,w+1)
 
-
+@wrap.on_mouse_down(wrap.BUTTON_WHEELDOWN)
+def wheeldown(pos_x,pos_y):
+    if wrap.sprite.is_collide_point(p3,pos_x,pos_y) == True:
+        h=wrap.sprite.get_height(p3)
+        w=wrap.sprite.get_width(p3)
+        wrap.sprite.set_size(p3,h-1,w-1)
 
